@@ -1,0 +1,60 @@
+.intro {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+    p {
+        max-width: 65ch;
+    }
+}
+
+.profile-pic {
+    border-radius: 2rem;
+    margin-top: auto;
+}
+
+.featured-projects {
+    background-color: var(--base-200);
+    border-radius: 1rem;
+    padding: 1rem;
+    img {
+        margin: auto;
+    }
+}
+
+.featured-articles {
+    background-color: var(--base-300);
+}
+
+article {
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        a {
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.article-title {
+    text-align: center;
+}
+.description {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .intro {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+        /*justify-content: center;*/
+    }
+}

@@ -1,0 +1,176 @@
+:root,
+[data-theme="light"] {
+    --base-100: #ffffff;
+    --base-200: #f5f5f5;
+    --base-300: #ebebeb;
+    --base-content: #000000;
+    --primary: #0d0d0d;
+    --primary-content: #ffffff;
+    --secondary: #1a1919;
+    --secondary-content: #ffffff;
+    --accent: #a8dadc;
+    --accent-content: #272322;
+    --neutral: #000000;
+    --neutral-content: #ffffff;
+}
+
+:root,
+[data-theme="dark"] {
+    --base-100: #000000;
+    --base-200: #141414;
+    --base-300: #1b1b1b;
+    --base-content: #d6d6d6;
+    --primary: #f2e9e4;
+    --primary-content: #000;
+    --secondary: #c9ada7;
+    --secondary-content: #1e293b;
+    --accent: #a8dadc;
+    --accent-content: #272322;
+    --neutral: #3a3a3a;
+    --neutral-content: #ffffff;
+}
+
+:root {
+    ul {
+        list-style: none;
+    }
+
+    button {
+        background: inherit;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+    button:hover {
+        opacity: 80%;
+    }
+}
+
+body {
+    background-color: var(--base-100);
+    color: var(--base-content);
+    font-family:
+        InterVariable, ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    opacity: 80%;
+}
+
+header {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    border-color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    justify-content: space-between;
+    margin-inline: auto;
+    align-items: center;
+    font-weight: 500;
+    font-size: large;
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 600;
+    gap: 1rem;
+    font-family:
+        "Futura", "Century Gothic", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+.container {
+    max-width: 95%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.header-icon {
+    width: 3rem;
+    fill: var(--accent);
+}
+
+.menu-icon {
+    width: 2rem;
+    fill: inherit;
+}
+.hidden {
+    display: none;
+}
+.block {
+    display: block;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: var(--primary-content);
+}
+
+.secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-content);
+}
+
+.nav-toggle {
+    display: block;
+    font-size: xx-large;
+}
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    z-index: 50;
+    background-color: var(--base-100);
+
+    a {
+        width: fit-content;
+    }
+}
+.nav-links.is-open {
+    display: flex;
+    background-color: var(--base-200);
+    border-bottom: 1px solid var(--accent);
+}
+
+/* Desktop: hide hamburger, always show links */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-basis: auto;
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        z-index: auto;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 3rem;
+    }
+}
