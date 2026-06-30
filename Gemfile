@@ -66,3 +66,5 @@ group :test do
 end
 
 gem "rename", "~> 1.1", group: :development
+
+gem "commonmarker", "~> 2.8"
