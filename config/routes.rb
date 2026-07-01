@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "pages/home", to: "pages#home", as: :home
   get "/articles", to: "articles#index", as: :articles
+  get "/projects", to: "projects#index", as: :projects
   #get "/articles/:slug", to: "articles#show", as: :article
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
