@@ -95,6 +95,11 @@ article {
     content: " \2197";
 }
 
+.underline {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 @media (min-width: 768px) {
     .intro {
         display: flex;

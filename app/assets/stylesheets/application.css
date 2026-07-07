@@ -154,7 +154,7 @@ header {
     left: 0;
     right: 0;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.45rem;
     padding: 1rem;
     z-index: 50;
     background-color: var(--base-100);

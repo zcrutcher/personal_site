@@ -11,13 +11,14 @@
 </div>
 <h1>Howdy, I'm Zach</h1>
 <p>
-a former Database Admin/Developer who got lost and ended up as a Web Development Manager for an e commerce company who has won the Bizrate Circle of Excellence award 18 times.
+a former Database Admin/Developer who got lost and ended up as the Web Development Manager for an e-commerce company. In my free time I enjoy learning different languages and frameworks. Next on my list - Ruby on Rails.
 </p>
 <p>
-I recently (solo) launched a SaaS for Food Trucks called Mobile Eats (link). This was a passion project that has allowed me to build a multi tenant web app to generate websites based on my customers truck data. It also allowed me to scratch my functional programming itch by diving headfirst into Elixir and Phoenix Framework.
+Over the past couple of years I solo-built and recently launched <%= link_to "Mobile Eats", "https://mobileeats.food", class: "underline", target: "_blank" %>. This was a passion project that allowed me to build a multi-tenant web app to generate websites based on customers’ food truck data. This allowed me to deep dive into Elixir and the Phoenix framework. Programming in a functional style was a big learning shift, but has been something I’ve carried into daily work.
+
 </p>
 <blockquote>
-If you want to learn more about me, check out my /about page. If you are here on business, you can find my resume _here_ and articles about my development experiences <here>
+    Want to know more about me? Read more <%= link_to "here", about_path(), class: "underline" %>. Here for business? My resume is <%= link_to "here", "https://docs.google.com/document/d/e/2PACX-1vRl6WOPkulvHEy3HbYxQtI7zHW55fFaY24swjbizIpo-AFdAjQ1-GKm4Avua00G-wYrEGyOovYpmA7Q/pub", class: "underline", target: "_blank" %>.
 </blockquote>
 <div class="cta-home">
 <%= link_to projects_path(), class: "projects-btn" do %>
@@ -30,6 +31,6 @@ If you want to learn more about me, check out my /about page. If you are here on
 </div>
 </div>
 
-<%= image_tag "home/portfolio-zach.png", alt: "Company Logo", class: "profile-pic block" %>
+<%= image_tag "home/portfolio-zach.png", alt: "Company Logo", class: "profile-pic block", style: "background-color: var(--base-300);" %>
 
 </section>
