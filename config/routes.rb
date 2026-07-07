@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about", as: :about
   get "/articles", to: "articles#index", as: :articles
   get "/projects", to: "projects#index", as: :projects
-  #get "/articles/:slug", to: "articles#show", as: :article
+  # get "/articles/:slug", to: "articles#show", as: :article
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-   root "pages#home"
+  root "pages#home"
 end

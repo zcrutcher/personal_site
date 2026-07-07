@@ -38,5 +38,5 @@ Rails.application.configure do
   config.content_security_policy_nonce_generator = ->(request) { SecureRandom.base64(16) }
 
   # Ensure the nonce is applied automatically to script tags
-  config.content_security_policy_nonce_directives = %w(script-src script)
+  config.content_security_policy_nonce_directives = %w[script-src script]
 end
