@@ -1,8 +1,14 @@
 <% content_for :page_stylesheet do %>
   <%= stylesheet_link_tag "home" %>
 <% end %>
+<% content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag "projects" %>
+<% end %>
 <section class="intro">
 <div>
+<div class="pill-badge">
+    Developer &middot Builder &middot Versatile
+</div>
 <h1>Howdy, I'm Zach</h1>
 <p>
 a former Database Admin/Developer who got lost and ended up as a Web Development Manager for an e commerce company who has won the Bizrate Circle of Excellence award 18 times.
@@ -10,27 +16,20 @@ a former Database Admin/Developer who got lost and ended up as a Web Development
 <p>
 I recently (solo) launched a SaaS for Food Trucks called Mobile Eats (link). This was a passion project that has allowed me to build a multi tenant web app to generate websites based on my customers truck data. It also allowed me to scratch my functional programming itch by diving headfirst into Elixir and Phoenix Framework.
 </p>
-<p>
+<blockquote>
 If you want to learn more about me, check out my /about page. If you are here on business, you can find my resume _here_ and articles about my development experiences <here>
-</p>
+</blockquote>
+<div class="cta-home">
+<%= link_to projects_path(), class: "projects-btn" do %>
+  <%= tag.button "View My Projects" %>
+<% end %>
+
+<%= link_to "https://docs.google.com/document/d/e/2PACX-1vRl6WOPkulvHEy3HbYxQtI7zHW55fFaY24swjbizIpo-AFdAjQ1-GKm4Avua00G-wYrEGyOovYpmA7Q/pub", target: "_blank", class: "resume-btn" do %>
+  <%= tag.button "View Resume" %>
+<% end %>
 </div>
-<%= image_tag "home/portfolio-zach.png", alt: "Company Logo", class: "profile-pic block", width: 200 %>
-</section>
+</div>
 
-<section class="featured-projects">
-    <h2>Featured Projects</h2>
+<%= image_tag "home/portfolio-zach.png", alt: "Company Logo", class: "profile-pic block" %>
 
-    <article>
-      <%= image_tag "home/mobile_eats_logo.png", alt: "Mobile Eats Company Logo", class: "profile-pick block", width: 200 %>
-        <h3 class="article-title">Mobile Eats</h3>
-        <p class="description">I spent two years building a web platform designed specifically for food trucks. It gives </p>
-        <footer>
-            <a href="/projects/mobile-eats" class="primary semibold">Read more</a>
-            <a href="https://mobileeats.food" class="secondary semibold">Check it out</a>
-        </footer>
-    </article>
-</section>
-
-<section class="featured-articles">
-    <h2> Featured Articles</h2>
 </section>

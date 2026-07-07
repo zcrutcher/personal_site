@@ -6,12 +6,8 @@
     padding: 2rem 0;
     p {
         max-width: 65ch;
+        padding: 0.5rem 0;
     }
-}
-
-.profile-pic {
-    border-radius: 2rem;
-    margin-top: auto;
 }
 
 .featured-projects {
@@ -48,13 +44,71 @@ article {
     text-align: center;
 }
 
+.profile-pic {
+    border-radius: 0.5rem;
+    max-width: 300px;
+    border: 4px solid var(--base-200);
+}
+
+.skills-banner {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 2px solid var(--base-300);
+    border-bottom: 2px solid var(--base-300);
+    padding: 1.5rem 0;
+}
+
+.cta-home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.projects-btn {
+    background-color: var(--primary);
+    color: var(--primary-content);
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+.projects-btn:after {
+    content: " \2794";
+}
+
+.resume-btn {
+    background-color: var(--secondary);
+    color: var(--secondary-content);
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.resume-btn:after {
+    content: " \2197";
+}
+
 @media (min-width: 768px) {
     .intro {
         display: flex;
         flex-direction: row;
         gap: 2rem;
         align-items: center;
-        justify-content: space-between;
-        /*justify-content: center;*/
+        justify-content: space-around;
+    }
+
+    .projects-btn {
+        width: fit-content;
+    }
+
+    .resume-btn {
+        width: fit-content;
     }
 }

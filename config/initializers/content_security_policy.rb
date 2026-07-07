@@ -27,3 +27,16 @@
 #   # Report violations without enforcing the policy.
 #   # config.content_security_policy_report_only = true
 # end
+
+Rails.application.configure do
+  config.content_security_policy do |policy|
+    # Enable the automatic nonce generator for script tags
+    policy.script_src :self, :https
+  end
+
+  # This tells Rails to generate a unique nonce per request
+  config.content_security_policy_nonce_generator = ->(request) { SecureRandom.base64(16) }
+
+  # Ensure the nonce is applied automatically to script tags
+  config.content_security_policy_nonce_directives = %w(script-src script)
+end

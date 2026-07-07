@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" data-controller="theme">
   <head>
     <title><%= content_for(:title) || "PersonalSite" %></title>
+
+    <script nonce="<%= content_security_policy_nonce %>">
+      const storedTheme = localStorage.getItem("theme");
+      const theme = storedTheme || (window.matchMedia('prefers-color-scheme: dark').matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="PersonalSite">
@@ -17,13 +24,14 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 <div class="container">
-  <body data-theme="dark">
+  <body class="<%= controller_name %>.<%= action_name %>">
       <header data-controller="nav" data-action="keydown.esc->nav#close">
 
         <%= link_to root_path, class: "brand" do %>
@@ -43,12 +51,19 @@
 
               </button>
               <nav class="nav-links" data-nav-target="menu">
-                <%= link_to "Articles", articles_path() %>
                 <%= link_to "Projects", projects_path() %>
-                <a href="#about">About</a>
+                <%= link_to "About", about_path() %>
                 <a href="#contact">Contact</a>
                 <%= link_to "Resume", "https://docs.google.com/document/d/e/2PACX-1vRl6WOPkulvHEy3HbYxQtI7zHW55fFaY24swjbizIpo-AFdAjQ1-GKm4Avua00G-wYrEGyOovYpmA7Q/pub", target: "_blank" %>
-        </nav>
+                <button data-theme-target="button" data-action="click->theme#toggle" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sun-icon" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="moon-icon" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                </button>
+              </nav>
 
       </header>
     <%= yield %>

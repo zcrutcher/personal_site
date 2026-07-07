@@ -1,5 +1,32 @@
+<% content_for :page_stylesheet do %>
+  <%= stylesheet_link_tag "projects" %>
+<% end %>
 <h1>Projects</h1>
 
-<div>
-    <%= link_to "Mobile Eats", "https://mobileeats.food", target: "_blank" %>
+<div class="project-card">
+    <div>
+    <%= image_tag "projects/mobile_eats_logo.png", alt: "Mobile Eats Logo", width: 200 %>
+    </div>
+    <div>
+        <div class="tags">
+            <div class="pill-badge">Featured Project</div>
+            <div class="pill-badge">SaaS</div>
+        </div>
+        <h2>Mobile Eats</h2>
+        <p>A high-performance, multi-tenant SaaS platform for the food truck industry. Built with the PETAL stack (Phoenix, Elixir, Tailwind CSS, Alpine.js, and LiveView) to handle real-time location mapping, dynamic inventory management, and zero-friction customer ordering. </p>
+        <div class="stack-details">
+            <div class="badge"><div class="color-detail" style="background-color: #48205D;"></div>Elixir</div>
+            <div class="badge"><div class="color-detail" style="background-color: #fd4f00;"></div>Phoenix</div>
+            <div class="badge"><div class="color-detail" style="background-color: #8D8390;"></div>LiveView</div>
+            <div class="badge"><div class="color-detail" style="background-color: #699eca;"></div>PostgreSQL</div>
+            <div class="badge"><div class="color-detail" style="background-color: #3ECF8E;"></div>Supabase</div>
+        </div>
+        <div class="cta">
+
+            <%= link_to "https://mobileeats.food", target: "_blank", class: "cta-btn" do %>
+              <%= tag.button "Check it out" %>
+            <% end %>
+
+        </div>
+    </div>
 </div>
