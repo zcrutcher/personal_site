@@ -76,6 +76,7 @@ article {
     font-weight: 700;
     width: 100%;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
 }
 .projects-btn:after {
     content: " \2794";
@@ -89,6 +90,7 @@ article {
     font-weight: 700;
     width: 100%;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
 }
 
 .resume-btn:after {

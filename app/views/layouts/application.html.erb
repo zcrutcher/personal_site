@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-controller="theme">
+<html lang="en" data-theme="light" data-controller="theme">
   <head>
-    <title><%= content_for(:title) || "PersonalSite" %></title>
+    <title><%= content_for(:title) || "Zach Crutcher" %></title>
 
     <script nonce="<%= content_security_policy_nonce %>">
       const storedTheme = localStorage.getItem("theme");
-      const theme = storedTheme || window.matchMedia(('prefers-color-scheme: dark').matches) ? "dark" : "light";
+      const theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
     </script>
 

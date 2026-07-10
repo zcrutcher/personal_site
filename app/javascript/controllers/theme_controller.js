@@ -7,7 +7,6 @@ export default class extends Controller {
   toggle() {
     const current = document.documentElement.getAttribute("data-theme");
     const theme = current == "dark" ? "light" : "dark";
-    console.log("Theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
     this.buttonTarget.setAttribute("aria-pressed", theme === "dark");
