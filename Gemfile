@@ -65,8 +65,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "rename", "~> 1.1", group: :development
 
-gem "commonmarker", "~> 2.8"
 
 gem "dockerfile-rails", ">= 1.7", group: :development

@@ -10,14 +10,5 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_30_025000) do
-  create_table "articles", force: :cascade do |t|
-    t.text "body", null: false
-    t.datetime "created_at", null: false
-    t.boolean "featured", default: false, null: false
-    t.string "slug", null: false
-    t.string "tag", null: false
-    t.string "title", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema[8.1].define(version: 0) do
 end
