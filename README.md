@@ -1,25 +1,20 @@
-# README
+# My Personal Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A home for my projects, thoughts, observations and whatever else tickles my fancy.
 
-Things you may want to cover:
+**Live:** [zachcrutcher.com](https://zachcrutcher.com)
 
-* Ruby version
+## Tech Stack
 
-* System dependencies
+- **Framework:** Rails 8
+- **Front end:** Hotwire — Turbo + Stimulus, no build step
+- **Assets:** importmaps
+- **Styles:** plain CSS, no framework
+- **CI:** RuboCop, Brakeman, test suite on every push
+- **CD:** automated deploy to Fly.io via GitHub Actions
 
-* Configuration
+## Notes on a few decisions
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# personal_site
+- **Importmaps over a bundler.** No Node toolchain for a site this size — dependencies are pinned and served directly.
+- **Plain CSS.** Been a while since using plain CSS. Felt like a good project to get back to the basics.
+- **Theme toggle.** Stimulus controller with `localStorage` for persistence, plus an inline script in `<head>` so the stored theme applies before first paint and there's no flash of the wrong theme.
